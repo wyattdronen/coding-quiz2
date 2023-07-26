@@ -113,5 +113,26 @@ var myQuestions = [
     submitButton.onclick = function(){
       showResults(questions, quizContainer, resultsContainer);
     }
-  
+
+    var scores = []
+    
+      function updateScores (numCorrect){
+      // create score obj
+      const newScore = { initials: initials, score: score }
+      scores.push (newScore)
+      saveScores ()
+      }
+      function saveScores(){
+       var Stringified = JSON.stringify(scores)
+      localStorage. setItem("scores", stringified)
+      }
+      function getScores (){
+      var stringedValue = localStorage.getItem (scores)
+      if( stringedValue) {
+      scores = JSON.parse(stringedValue)
+      }
+    }
+
+
   }
+
