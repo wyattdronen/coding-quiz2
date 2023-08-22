@@ -8,6 +8,7 @@ var timer = document.querySelector("#timer");
 var question = document.querySelector("#question");
 // variables for start quiz
 var startButton = document.querySelector("#startButton");
+var no = false;
 // variables for multiple choice options
 var A = document.querySelector("#A");
 var B = document.querySelector("#B");
@@ -16,7 +17,7 @@ var D = document.querySelector("#D");
 // variable for choice array
 var choice = [A,B,C,D];
 // variable for user answer chosen 
-var userAnswer = "";
+var userAnswer = [];
 // variable for timer interval
 var timerInt = 6000;
 var timeRel;
@@ -41,23 +42,59 @@ var questions = [
   var saveScore = document.querySelector("#saveScore");
 // Start quiz function
 function startQuiz() {
-
-  // Set timer interval
-  timeRel = setInterval(function() {
-    timerInt--;
-    timer.textContent = timerInt;
-    if(timerInt === 0) {
-      clearInterval(timeRel);
-      endQuiz();
-    }
-  }, 1000);
-  // Display first question
-  showQuestion(0);
-  // Start button click handler
+  
   startButton.addEventListener("click", function() {
     // Hide start button
-  startButton.style.display = "none";
-})
-};
-// Function to show question
+  startButton.style.display = "none";},
+  // Display first question
+  startQuestions(),
+  // Start timer
+  timeRel = setInterval(function(){
+    timerInt--;
+    timer.textContent = timerInt;
+  }
+  )
+)}
+// Start questions
+function startQuestions(){
+  score = 0;
+  currQuestion = 0;
+  question.textContent = questions[currQuestion].question;
+  displayAnswer(),
+  checkAnswer(),
+  nextQuestion()
+}
+// Display answer choices
+function displayAnswer(){
+  var answers = questions[currQuestion].choiceA + [] + questions[currQuestion].choiceB + [] + questions[currQuestion].choiceC + [] + questions[currQuestion].choiceD;
+  choice.forEach(function(choice){
+    choice.textContent = answers;
+});
+}
+// Check answer
+function checkAnswer(event){
+  if(event.userAnswer.textContent === questions[currQuestion].answer){
+  score++;
+  scored.textContent = score;
+}
+}
+// Next question
+function nextQuestion(){
+  if(questions.length === currQuestion){
+    startQuestions()
+  }
+   else{ gameOver()}
+}
+// Game over function
+function gameOver(){
+  scored.textContent = score
+  topScore.textContent = localStorage.getItem("topScore") || 0;
+  saveScore()
+}
+ // Save score function
+ function saveScore(){
+  localStorage.setItem("topScore", Math.max(score, localStorage.getItem("topScore") || 0));
+}
 
+
+startQuiz()
