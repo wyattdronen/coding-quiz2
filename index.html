@@ -7,38 +7,25 @@
   <title>Window Object</title>
   <link rel="stylesheet" href="./assets/style.css"/>
 </head>
-
 <body>
-    <button id="start">Start</button>
-    <div id="quiz">
-      <p>"What does CSS stand for?"</p>
-       <input type="radio" id="a" name="question" value="a">
-       <label for="Common Style Sheet">Common Style Sheet</label><br>
-       <input type="radio" id="b" name="question" value="b">
-       <label for="Colorful Style Sheet">Colorful Style Sheet</label><br>
-       <input type="radio" id="c" name="question" value="c">
-       <label for="Computer Style Sheet">Computer Style Sheet</label><br>  
-       <input type="radio" id="d" name="question" value="d">
-       <label for="Cascading Style Sheet">Cascading Style Sheet</label><br>  
-      
-      <p>"What does HTML stand for?"</p>
-        <input type="radio" id="a2" name="question" value="a">
-        <label for="Hyper Text Preprocessor">Hyper Text Preprocessor</label><br>
-        <input type="radio" id="b2" name="question" value="b">
-        <label for="Hyper Text Markup Language">Hyper Text Markup Language</label><br>  
-        <input type="radio" id="c2" name="question" value="c">
-        <label for="Hyper Text Multiple Language">Hyper Text Multiple Language</label><br>
-        <input type="radio" id="d2" name="question" value="d">
-        <label for="Hyper Tool Multi Language">Hyper Tool Multi Language</label><br>  
+  <div class="container">
+    <h2 id="timer">timer</h2>
+    <div class="score">
+      <div>
+        <h2 id="quest">#quest</h2>
+        <div class="Answers">
+          <button type="button" id="start">Z</button>
+          <button type="button" id="A">A</button>
+          <button type="button" id="B">B</button>
+          <button type="button" id="C">C</button>
+          <button type="button" id="D">D</button>
+        </div>
+      </div>
     </div>
-    
-
-
-
-
-    <button id="submit">Get Results</button>
-    <div id="results"></div>
-    
-  <script src= "script.js"></script>
+  </div>
+  <footer>
+    <h2 id="topscore">topscore</h2>
+  </footer>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
