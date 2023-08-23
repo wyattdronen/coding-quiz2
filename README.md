@@ -1,9 +1,17 @@
-![Alt text](./assets/images/quiz.jpg?raw=true "screenshot")
 
+## Use
+This coding quiz will allow the user to select from multiple choice answers for the questions. After submitting their answers, the user will recieve feedback on their responses.The quiz is timed and will subtract 10 seconds from the timer for each incorrect answer.
 
-This coding quiz app uses a start button function, score keeping funtion, and color coding weather right or wrong answer.
-* page link (https://wyattdronen.github.io/coding-quiz2/)
+## Page 
+(https://wyattdronen.github.io/coding-quiz2/)
 
-
-I cited this page to generate color and correct/incorrect function.
+## Citation
+I cited this page for selecting multiple choice and a correct/incorrect for feedback
 * https://simplestepscode.com/javascript-quiz-tutorial/
+
+## ScreenShots
+
+![Alt text](./assets/images/quiz1.jpg?raw=true "screenshot")
+
+![Alt text](./assets/images/quiz2.jpg?raw=true "screenshot")
+
